@@ -40,6 +40,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             }
         }
     }
+    // ++ добавлен функционал замены валют местами (меняются и значения в блоках подсчета)
     @IBAction func ChangeRates(_ sender: Any) {
         var rightValue = self.CurrencyList_after.selectedRow(inComponent: 0)
         var leftValue = self.CurrencyList_from.selectedRow(inComponent: 0)
@@ -77,7 +78,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         return currencies[row]
     }
-    
+    // функционал изолирования одинаковых положений валют (универсален)
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
             self.CurrencyList_after.reloadAllComponents()
             if self.CurrencyList_from.selectedRow(inComponent: 0) == self.CurrencyList_after.selectedRow(inComponent: 0){
@@ -93,7 +94,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             self.updateCurrentCurrency()
     }
     
-    
+    // основные настройки вьюшки
     override func viewDidLoad() {
         super.viewDidLoad()
         self.CurrencyList_from.dataSource = self
@@ -128,6 +129,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         // Dispose of any resources that can be recreated.
     }
     
+    // ++ логика для добавленных блоков подчетов, работает как слева направо, так и наоборот
     func textFieldDidChange(_ textField: UITextField) {
         if self.CurrencyLabel.text != "" {
             var currency_val = Double(self.CurrencyLabel.text!)
@@ -146,6 +148,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
     }
     
+    // при переключении правого Picker'a пересчет значений правого блока в интересующую валюту
     func updateRightTextField() {
             var currency_val_cur = Double(self.CurrencyLabel.text!)
             var number_l_cur = Double(self.NumberValue.text!)
@@ -157,6 +160,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             }
     }
 
+    // ++ функционал фоновой загрузки данных о доступных валютах ++ отлов работы вне интернета
     func pre_request() {
         LoadInd.startAnimating()
         let url = URL(string: "https://api.fixer.io/latest")
@@ -252,7 +256,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
     }
     
-    
+    // парсинг данных о конкретной валюте
     func parseCur(data: Data?, toCurrency: String) -> String{
         var str = ""
         
@@ -297,6 +301,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
        }
     }
     
+    // обновление валютного центрального лейбла 
     func updateCurrentCurrency() {
         if flag{
             self.CurrencyLabel.text = ""
