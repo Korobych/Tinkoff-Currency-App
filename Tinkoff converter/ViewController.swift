@@ -29,6 +29,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBOutlet weak var NumberValue: UITextField!
     @IBOutlet weak var ValueTo: UITextField!
+    @IBOutlet weak var NoInternetConnectionImage: UIImageView!
+    
     @IBAction func RetryButton(_ sender: UIButton) {
         pre_request()
         if flag{
@@ -107,6 +109,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.NumberValue.text = ""
         self.NumberValue.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
+        self.NoInternetConnectionImage.isHidden = true
         self.ValueTo.textAlignment = .center
         self.ValueTo.textColor = UIColor.lightGray
         self.ValueTo.font = UIFont(name: "Futura-Medium", size: 18)
@@ -193,6 +196,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                                 }) { (finished) in
                                     self.DataReadyLabel.isHidden = finished
                                 }
+                                UIView.animate(withDuration: 1, animations: {
+                                    self.NoInternetConnectionImage.alpha = 0
+                                }) { (finished) in
+                                    self.NoInternetConnectionImage.isHidden = finished
+                                }
                                 
                             }
                         }
@@ -208,7 +216,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             {
                 print("Не могу обновить курсы!")
                 self.flag = false
+                self.NoInternetConnectionImage.isHidden = false
                 self.present(self.internetFailAlert, animated: true, completion: nil)
+
             }
             DispatchQueue.main.async {
                 self.LoadInd.stopAnimating()

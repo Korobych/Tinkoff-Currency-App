@@ -41,14 +41,6 @@
                                     <action selector="RetryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z4D-ec-d2f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvC-pM-7lX">
-                                <rect key="frame" x="317" y="28" width="42" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="FSU-02-GAp"/>
-                                    <constraint firstAttribute="height" constant="41" id="JNX-Bj-y11"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="info_icon.png"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data is up to: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFU-QM-QWc">
                                 <rect key="frame" x="125" y="581" width="125" height="20"/>
                                 <fontDescription key="fontDescription" name="Gilroy-Light" family="Gilroy" pointSize="17"/>
@@ -62,7 +54,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-lp-z3l">
-                                <rect key="frame" x="16" y="38" width="272" height="31"/>
+                                <rect key="frame" x="16" y="38" width="0.0" height="31"/>
                                 <fontDescription key="fontDescription" name="Gilroy-ExtraBold" family="Gilroy" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -125,6 +117,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-internet-connection.png" translatesAutoresizingMaskIntoConstraints="NO" id="xax-Bp-FGY">
+                                <rect key="frame" x="15" y="104" width="349" height="304"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -132,9 +127,7 @@
                             <constraint firstItem="Rcg-lp-z3l" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="18" id="2JZ-NB-GKZ"/>
                             <constraint firstItem="VzD-Ow-9DC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4aW-hx-gN0"/>
                             <constraint firstItem="oJW-ku-VKP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1.5" id="4hO-pw-Jrt"/>
-                            <constraint firstItem="DWt-cG-4pi" firstAttribute="centerX" secondItem="mvC-pM-7lX" secondAttribute="centerX" constant="-21.25" id="6Vg-N1-gFW"/>
                             <constraint firstItem="0vz-2M-jW8" firstAttribute="top" secondItem="W0Q-8D-H22" secondAttribute="bottom" constant="-510.5" id="6sz-lZ-L0l"/>
-                            <constraint firstItem="mvC-pM-7lX" firstAttribute="leading" secondItem="Rcg-lp-z3l" secondAttribute="trailing" constant="29" id="8oL-Fo-MVm"/>
                             <constraint firstItem="H5r-Pv-ml4" firstAttribute="top" secondItem="oJW-ku-VKP" secondAttribute="bottom" constant="88" id="9rL-GS-bUD"/>
                             <constraint firstItem="oJW-ku-VKP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="153" id="Aop-B7-f2f"/>
                             <constraint firstItem="tMt-sx-W9Z" firstAttribute="leading" secondItem="YFU-QM-QWc" secondAttribute="leading" constant="-108" id="CLT-5u-X43"/>
@@ -142,27 +135,29 @@
                             <constraint firstItem="W0Q-8D-H22" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DPd-bX-Ppt"/>
                             <constraint firstItem="0vz-2M-jW8" firstAttribute="top" secondItem="DWt-cG-4pi" secondAttribute="top" id="DZX-Bq-Jlm"/>
                             <constraint firstItem="oJW-ku-VKP" firstAttribute="leading" secondItem="0vz-2M-jW8" secondAttribute="trailing" constant="8.5" id="JgL-U0-gEf"/>
+                            <constraint firstItem="xax-Bp-FGY" firstAttribute="top" secondItem="Rcg-lp-z3l" secondAttribute="bottom" constant="35" id="LsU-Gy-GfV"/>
                             <constraint firstItem="DWt-cG-4pi" firstAttribute="leading" secondItem="Hg5-Uy-shH" secondAttribute="trailing" constant="8" symbolic="YES" id="Lwi-Ja-SJN"/>
                             <constraint firstItem="gOd-PW-fne" firstAttribute="leading" secondItem="0vz-2M-jW8" secondAttribute="trailing" constant="75" id="Lyz-Z4-ds2"/>
                             <constraint firstItem="oJW-ku-VKP" firstAttribute="centerX" secondItem="gOd-PW-fne" secondAttribute="centerX" constant="1" id="M4w-jn-86c"/>
                             <constraint firstItem="H5r-Pv-ml4" firstAttribute="trailing" secondItem="DWt-cG-4pi" secondAttribute="trailing" id="OpG-aD-Gxe"/>
                             <constraint firstItem="mkA-cZ-ohU" firstAttribute="top" secondItem="oJW-ku-VKP" secondAttribute="bottom" constant="8" symbolic="YES" id="QQX-Fj-9az"/>
+                            <constraint firstItem="xax-Bp-FGY" firstAttribute="centerX" secondItem="oJW-ku-VKP" secondAttribute="centerX" id="RBq-93-ajn"/>
                             <constraint firstItem="Hg5-Uy-shH" firstAttribute="leading" secondItem="oJW-ku-VKP" secondAttribute="leading" id="V3t-S4-lyv"/>
                             <constraint firstItem="mkA-cZ-ohU" firstAttribute="leading" secondItem="0vz-2M-jW8" secondAttribute="trailing" constant="63" id="WaI-Hz-75H"/>
                             <constraint firstItem="Hg5-Uy-shH" firstAttribute="top" secondItem="Rcg-lp-z3l" secondAttribute="bottom" constant="35" id="Ymm-dk-SvI"/>
                             <constraint firstItem="0vz-2M-jW8" firstAttribute="centerY" secondItem="gOd-PW-fne" secondAttribute="centerY" constant="44" id="bUc-fD-tFt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DWt-cG-4pi" secondAttribute="trailing" id="eAR-BO-qQt"/>
                             <constraint firstItem="0vz-2M-jW8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="17" id="eFR-ww-pC3"/>
-                            <constraint firstItem="mvC-pM-7lX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="fXX-bX-fhn"/>
                             <constraint firstItem="VzD-Ow-9DC" firstAttribute="top" secondItem="YFU-QM-QWc" secondAttribute="bottom" constant="8" symbolic="YES" id="fqm-2g-fT5"/>
                             <constraint firstItem="tMt-sx-W9Z" firstAttribute="top" secondItem="oJW-ku-VKP" secondAttribute="bottom" constant="88" id="gKl-r8-u01"/>
                             <constraint firstItem="tMt-sx-W9Z" firstAttribute="trailing" secondItem="YFU-QM-QWc" secondAttribute="trailing" constant="-97" id="ggB-PJ-6xs"/>
                             <constraint firstItem="YFU-QM-QWc" firstAttribute="top" secondItem="W0Q-8D-H22" secondAttribute="top" id="kEi-oK-LzQ"/>
                             <constraint firstItem="YFU-QM-QWc" firstAttribute="leading" secondItem="oJW-ku-VKP" secondAttribute="leading" constant="14.5" id="meY-15-khk"/>
-                            <constraint firstItem="Rcg-lp-z3l" firstAttribute="bottom" secondItem="mvC-pM-7lX" secondAttribute="bottom" id="tUq-S1-YRe"/>
+                            <constraint firstItem="xax-Bp-FGY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-1" id="oma-1g-Api"/>
                             <constraint firstItem="Rcg-lp-z3l" firstAttribute="leading" secondItem="0vz-2M-jW8" secondAttribute="leading" constant="-1" id="v91-aT-WW8"/>
                             <constraint firstItem="mkA-cZ-ohU" firstAttribute="centerX" secondItem="YFU-QM-QWc" secondAttribute="centerX" id="v9O-lF-d5h"/>
                             <constraint firstItem="YFU-QM-QWc" firstAttribute="centerX" secondItem="gOd-PW-fne" secondAttribute="centerX" id="wId-QT-aSY"/>
+                            <constraint firstItem="xax-Bp-FGY" firstAttribute="bottom" secondItem="H5r-Pv-ml4" secondAttribute="bottom" constant="4" id="xiW-TY-zVe"/>
                             <constraint firstItem="oJW-ku-VKP" firstAttribute="top" secondItem="Hg5-Uy-shH" secondAttribute="bottom" constant="8" symbolic="YES" id="xzd-LN-Zb9"/>
                             <constraint firstItem="oJW-ku-VKP" firstAttribute="centerY" secondItem="gOd-PW-fne" secondAttribute="centerY" constant="-0.5" id="z5h-YT-JYv"/>
                         </constraints>
@@ -174,6 +169,7 @@
                         <outlet property="DataReadyLabel" destination="Rcg-lp-z3l" id="eXk-FM-KKX"/>
                         <outlet property="DateLabel" destination="VzD-Ow-9DC" id="vCa-oE-CXp"/>
                         <outlet property="LoadInd" destination="gOd-PW-fne" id="1cL-Xj-8dl"/>
+                        <outlet property="NoInternetConnectionImage" destination="xax-Bp-FGY" id="MZR-7V-EXT"/>
                         <outlet property="NumberValue" destination="tMt-sx-W9Z" id="DcV-65-1g7"/>
                         <outlet property="ValueTo" destination="H5r-Pv-ml4" id="Ywp-KQ-xRn"/>
                         <outlet property="WelcomeLabel" destination="Hg5-Uy-shH" id="8d6-G9-vRV"/>
@@ -186,7 +182,7 @@
     </scenes>
     <resources>
         <image name="arrows.png" width="512" height="512"/>
-        <image name="info_icon.png" width="101" height="100"/>
+        <image name="no-internet-connection.png" width="800" height="600"/>
         <image name="reload icon.png" width="128" height="128"/>
     </resources>
 </document>

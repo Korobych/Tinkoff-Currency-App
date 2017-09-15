@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		981324DA1F6C1FB300BAC95E /* arrows.png in Resources */ = {isa = PBXBuildFile; fileRef = 981324D91F6C1FB300BAC95E /* arrows.png */; };
+		981324DC1F6C7FEA00BAC95E /* no-internet-connection.png in Resources */ = {isa = PBXBuildFile; fileRef = 981324DB1F6C7FEA00BAC95E /* no-internet-connection.png */; };
 		982637161F6B4711003E45E1 /* reload icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 982637141F6B4711003E45E1 /* reload icon.png */; };
 		982637171F6B4711003E45E1 /* info_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 982637151F6B4711003E45E1 /* info_icon.png */; };
 		98B6C7C91F6AA05100143360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B6C7C81F6AA05100143360 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		981324D91F6C1FB300BAC95E /* arrows.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrows.png; sourceTree = "<group>"; };
+		981324DB1F6C7FEA00BAC95E /* no-internet-connection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-internet-connection.png"; sourceTree = "<group>"; };
 		982637141F6B4711003E45E1 /* reload icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reload icon.png"; path = "Tinkoff converter/reload icon.png"; sourceTree = "<group>"; };
 		982637151F6B4711003E45E1 /* info_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info_icon.png; path = "Tinkoff converter/info_icon.png"; sourceTree = "<group>"; };
 		98B6C7C51F6AA05100143360 /* Tinkoff converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinkoff converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +82,7 @@
 		98F741FA1F6BD848006C386F /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
+				981324DB1F6C7FEA00BAC95E /* no-internet-connection.png */,
 				982637141F6B4711003E45E1 /* reload icon.png */,
 				98F741FB1F6BD861006C386F /* Radomir Tinkov - Gilroy-ExtraBold.otf */,
 				982637151F6B4711003E45E1 /* info_icon.png */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98B6C7D31F6AA05100143360 /* LaunchScreen.storyboard in Resources */,
+				981324DC1F6C7FEA00BAC95E /* no-internet-connection.png in Resources */,
 				98B6C7D01F6AA05100143360 /* Assets.xcassets in Resources */,
 				981324DA1F6C1FB300BAC95E /* arrows.png in Resources */,
 				982637161F6B4711003E45E1 /* reload icon.png in Resources */,
