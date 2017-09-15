@@ -154,7 +154,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         do{
             let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? Dictionary<String,Any>
             if let parsed_json = json{
-                print(parsed_json)
                 if let cur_rates = parsed_json?["rates"] as? Dictionary<String, Double>{
                     if let elem = cur_rates[toCurrency] {
                         str = String(format:"%.2f", elem)
