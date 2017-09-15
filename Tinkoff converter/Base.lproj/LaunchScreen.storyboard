@@ -9,6 +9,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Radomir Tinkov - Gilroy-ExtraBold.otf">
+            <string>Gilroy-ExtraBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -18,35 +23,46 @@
                         <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
-                    <view key="view" alpha="0.84999999999999998" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tinkoff special" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IlQ-Aa-qba">
-                                <rect key="frame" x="88" y="232" width="199" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Converter" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkA-x5-mYA">
+                                <rect key="frame" x="86" y="424" width="199" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="Zrg-DU-hIm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gilroy-ExtraBold" family="Gilroy" pointSize="35"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Converter" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkA-x5-mYA">
-                                <rect key="frame" x="88" y="307" width="199" height="96"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DcE-c3-FP1">
+                                <rect key="frame" x="87" y="233" width="202" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="96" id="zuL-ZJ-c1V"/>
+                                    <constraint firstAttribute="width" constant="202" id="drG-PD-yoF"/>
+                                    <constraint firstAttribute="height" constant="200" id="o5m-oB-nbS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <nil key="textColor"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special for" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYF-r2-jKK">
+                                <rect key="frame" x="94" y="160" width="186" height="65"/>
+                                <fontDescription key="fontDescription" name="Gilroy-ExtraBold" family="Gilroy" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.01448708213865757" green="0.6610909104347229" blue="0.96040183305740356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="PkA-x5-mYA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Aib-jM-A2r"/>
-                            <constraint firstItem="IlQ-Aa-qba" firstAttribute="trailing" secondItem="PkA-x5-mYA" secondAttribute="trailing" id="DYe-7f-gaK"/>
-                            <constraint firstItem="IlQ-Aa-qba" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="212" id="Pdi-EE-DBK"/>
-                            <constraint firstItem="PkA-x5-mYA" firstAttribute="top" secondItem="IlQ-Aa-qba" secondAttribute="bottom" constant="34" id="S3d-Ip-nEa"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="PkA-x5-mYA" secondAttribute="bottom" constant="264" id="nqA-aw-CZF"/>
-                            <constraint firstItem="IlQ-Aa-qba" firstAttribute="leading" secondItem="PkA-x5-mYA" secondAttribute="leading" id="rc1-dS-8D2"/>
-                            <constraint firstItem="PkA-x5-mYA" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="72" id="zeX-gg-XEo"/>
+                            <constraint firstItem="kYF-r2-jKK" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="140" id="1kM-xj-Rfq"/>
+                            <constraint firstItem="DcE-c3-FP1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="3Hp-hP-u05"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="PkA-x5-mYA" secondAttribute="bottom" constant="147" id="CvO-lZ-IdV"/>
+                            <constraint firstItem="kYF-r2-jKK" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Dw3-oL-s3O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PkA-x5-mYA" secondAttribute="trailing" constant="74" id="JB3-66-AfJ"/>
+                            <constraint firstItem="PkA-x5-mYA" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="70" id="Qex-BQ-78i"/>
+                            <constraint firstItem="DcE-c3-FP1" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="71" id="R8A-8W-PY0"/>
+                            <constraint firstItem="DcE-c3-FP1" firstAttribute="top" secondItem="kYF-r2-jKK" secondAttribute="bottom" constant="8" symbolic="YES" id="SZs-ha-mL3"/>
+                            <constraint firstItem="kYF-r2-jKK" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="78" id="h72-DB-7EO"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="DcE-c3-FP1" secondAttribute="bottom" constant="234" id="qTm-VD-Vfy"/>
+                            <constraint firstItem="DcE-c3-FP1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="tMX-2t-2Rf"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -55,4 +71,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo.jpg" width="400" height="399"/>
+    </resources>
 </document>

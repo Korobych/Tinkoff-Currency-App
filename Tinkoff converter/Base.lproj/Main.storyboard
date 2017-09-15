@@ -31,12 +31,6 @@
                                     <constraint firstAttribute="width" constant="20" id="SBb-uV-ulc"/>
                                 </constraints>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJW-ku-VKP">
-                                <rect key="frame" x="126" y="307" width="124" height="53"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0Q-8D-H22">
                                 <rect key="frame" x="8" y="580" width="79" height="79"/>
                                 <constraints>
@@ -71,6 +65,12 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWt-cG-4pi">
                                 <rect key="frame" x="272" y="225" width="87" height="216"/>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency value" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJW-ku-VKP">
+                                <rect key="frame" x="126" y="294" width="124" height="79"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -79,7 +79,7 @@
                             <constraint firstItem="oJW-ku-VKP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4hO-pw-Jrt"/>
                             <constraint firstItem="DWt-cG-4pi" firstAttribute="centerX" secondItem="mvC-pM-7lX" secondAttribute="centerX" constant="-22.5" id="6Vg-N1-gFW"/>
                             <constraint firstItem="0vz-2M-jW8" firstAttribute="top" secondItem="W0Q-8D-H22" secondAttribute="bottom" constant="-434" id="6sz-lZ-L0l"/>
-                            <constraint firstItem="oJW-ku-VKP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="287" id="Aop-B7-f2f"/>
+                            <constraint firstItem="oJW-ku-VKP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="274" id="Aop-B7-f2f"/>
                             <constraint firstItem="DWt-cG-4pi" firstAttribute="leading" secondItem="oJW-ku-VKP" secondAttribute="trailing" constant="22" id="CYl-9C-5uy"/>
                             <constraint firstItem="W0Q-8D-H22" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-8" id="DPd-bX-Ppt"/>
                             <constraint firstItem="0vz-2M-jW8" firstAttribute="top" secondItem="DWt-cG-4pi" secondAttribute="top" id="DZX-Bq-Jlm"/>

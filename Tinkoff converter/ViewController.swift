@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
     
+    let internetFailAlert = UIAlertController(title: "Обновление данных", message: "Отсутствует подключение к сети.", preferredStyle: UIAlertControllerStyle.alert)
+    let dataErrorAlert = UIAlertController(title: "Ошибка", message: "Данных валюты не найдено!", preferredStyle: UIAlertControllerStyle.alert)
+    
     
     @IBOutlet weak var CurrencyLabel: UILabel!
 
@@ -22,24 +25,23 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBAction func RetryButton(_ sender: UIButton) {
         pre_request()
+        if flag{
+            self.CurrencyLabel.text = "Данные обновлены!"
+        }
     }
     var currencies = [String]()
+    var flag: Bool = false
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        if pickerView == CurrencyList_after{
-//            return self.baseExept().count
-//        }
+
         return currencies.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        if pickerView == CurrencyList_after{
-//            return self.baseExept()[row]
-//        }
         
         return currencies[row]
     }
@@ -67,6 +69,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.CurrencyList_after.dataSource = self
         self.CurrencyList_from.delegate = self
         self.CurrencyList_after.delegate = self
+        self.LoadInd.hidesWhenStopped = true
+        self.internetFailAlert.addAction(UIAlertAction(title: "Ок", style: UIAlertActionStyle.default, handler: nil))
+        self.dataErrorAlert.addAction(UIAlertAction(title: "Ок", style: UIAlertActionStyle.default, handler: nil))
         pre_request()
         
         
@@ -106,8 +111,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                         }
                         if let date = json_cont["date"] as? String
                         {
+                            DispatchQueue.main.async {
                             self.DateLabel.text = date
+                            }
                         }
+                        self.flag = true
                     }
                     catch
                     {
@@ -118,16 +126,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             else
             {
                 print("Не могу обновить курсы!")
-//                ошибка отсутствия данных выкидывается ALERT NET INETA
+                self.flag = false
+                self.present(self.internetFailAlert, animated: true, completion: nil)
             }
             DispatchQueue.main.async {
                 self.LoadInd.stopAnimating()
-                self.LoadInd.hidesWhenStopped = true
                 self.CurrencyList_after.reloadAllComponents()
                 self.CurrencyList_from.reloadAllComponents()
                 self.CurrencyList_from.selectRow(self.currencies.count/2, inComponent: 0, animated: true)
                 self.CurrencyList_after.selectRow(self.currencies.count/2 + 1, inComponent: 0, animated: true)
-                self.CurrencyLabel.text = "Успех"
                 
             }
             
@@ -169,8 +176,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                     }
                     else
                     {
-                        str = "..."
-                        //ALARM NO CURRENCY + одинаковая валюта
+                        str = ""
+                        // ...
                     }
                 }
                 else
@@ -181,7 +188,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             else
             {
                 str = "JSON can't be parsed. No data available!"
-                // ALARM NO DATA FOUND
+                self.present(self.dataErrorAlert, animated: true, completion: nil)
             }
         }
         return str
@@ -202,18 +209,20 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func updateCurrentCurrency() {
-        self.CurrencyLabel.text = "..."
-        self.LoadInd.startAnimating()
-        let baseCurrencyIndex = self.CurrencyList_from.selectedRow(inComponent: 0)
-        let toCurrencyIndex = self.CurrencyList_after.selectedRow(inComponent: 0)
-        let baseCurrency = self.currencies[baseCurrencyIndex]
-        let toCurrency = self.currencies[toCurrencyIndex]
+        if flag{
+            self.CurrencyLabel.text = ""
+            self.LoadInd.startAnimating()
+            let baseCurrencyIndex = self.CurrencyList_from.selectedRow(inComponent: 0)
+            let toCurrencyIndex = self.CurrencyList_after.selectedRow(inComponent: 0)
+            let baseCurrency = self.currencies[baseCurrencyIndex]
+            let toCurrency = self.currencies[toCurrencyIndex]
         
-        self.retrieveCurrency(baseCurrency: baseCurrency, toCurrency: toCurrency) { [weak self] (val) in
-            DispatchQueue.main.async(execute: {
-                self?.CurrencyLabel.text = val
-                self?.LoadInd.stopAnimating()
-            })
+            self.retrieveCurrency(baseCurrency: baseCurrency, toCurrency: toCurrency) { [weak self] (val) in
+                DispatchQueue.main.async(execute: {
+                    self?.CurrencyLabel.text = val
+                    self?.LoadInd.stopAnimating()
+                })
+            }
         }
     }
     

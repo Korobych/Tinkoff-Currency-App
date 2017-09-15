@@ -14,11 +14,14 @@
 		98B6C7CE1F6AA05100143360 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B6C7CC1F6AA05100143360 /* Main.storyboard */; };
 		98B6C7D01F6AA05100143360 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B6C7CF1F6AA05100143360 /* Assets.xcassets */; };
 		98B6C7D31F6AA05100143360 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B6C7D11F6AA05100143360 /* LaunchScreen.storyboard */; };
+		98F741F91F6BD596006C386F /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 98F741F81F6BD596006C386F /* logo.jpg */; };
+		98F741FD1F6BD861006C386F /* Radomir Tinkov - Gilroy-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98F741FB1F6BD861006C386F /* Radomir Tinkov - Gilroy-ExtraBold.otf */; };
+		98F741FE1F6BD861006C386F /* Radomir Tinkov - Gilroy-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98F741FC1F6BD861006C386F /* Radomir Tinkov - Gilroy-Light.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		982637141F6B4711003E45E1 /* reload icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload icon.png"; sourceTree = "<group>"; };
-		982637151F6B4711003E45E1 /* info_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_icon.png; sourceTree = "<group>"; };
+		982637141F6B4711003E45E1 /* reload icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reload icon.png"; path = "Tinkoff converter/reload icon.png"; sourceTree = "<group>"; };
+		982637151F6B4711003E45E1 /* info_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info_icon.png; path = "Tinkoff converter/info_icon.png"; sourceTree = "<group>"; };
 		98B6C7C51F6AA05100143360 /* Tinkoff converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinkoff converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B6C7C81F6AA05100143360 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98B6C7CA1F6AA05100143360 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +29,9 @@
 		98B6C7CF1F6AA05100143360 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98B6C7D21F6AA05100143360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98B6C7D41F6AA05100143360 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98F741F81F6BD596006C386F /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = logo.jpg; path = "Tinkoff converter/logo.jpg"; sourceTree = "<group>"; };
+		98F741FB1F6BD861006C386F /* Radomir Tinkov - Gilroy-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Radomir Tinkov - Gilroy-ExtraBold.otf"; sourceTree = "<group>"; };
+		98F741FC1F6BD861006C386F /* Radomir Tinkov - Gilroy-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Radomir Tinkov - Gilroy-Light.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +48,7 @@
 		98B6C7BC1F6AA05100143360 = {
 			isa = PBXGroup;
 			children = (
+				98F741FA1F6BD848006C386F /* Resourses */,
 				98B6C7C71F6AA05100143360 /* Tinkoff converter */,
 				98B6C7C61F6AA05100143360 /* Products */,
 			);
@@ -64,10 +71,20 @@
 				98B6C7CF1F6AA05100143360 /* Assets.xcassets */,
 				98B6C7D11F6AA05100143360 /* LaunchScreen.storyboard */,
 				98B6C7D41F6AA05100143360 /* Info.plist */,
-				982637141F6B4711003E45E1 /* reload icon.png */,
-				982637151F6B4711003E45E1 /* info_icon.png */,
 			);
 			path = "Tinkoff converter";
+			sourceTree = "<group>";
+		};
+		98F741FA1F6BD848006C386F /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				982637141F6B4711003E45E1 /* reload icon.png */,
+				98F741FB1F6BD861006C386F /* Radomir Tinkov - Gilroy-ExtraBold.otf */,
+				982637151F6B4711003E45E1 /* info_icon.png */,
+				98F741FC1F6BD861006C386F /* Radomir Tinkov - Gilroy-Light.otf */,
+				98F741F81F6BD596006C386F /* logo.jpg */,
+			);
+			name = Resourses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,8 +150,11 @@
 				98B6C7D31F6AA05100143360 /* LaunchScreen.storyboard in Resources */,
 				98B6C7D01F6AA05100143360 /* Assets.xcassets in Resources */,
 				982637161F6B4711003E45E1 /* reload icon.png in Resources */,
+				98F741FE1F6BD861006C386F /* Radomir Tinkov - Gilroy-Light.otf in Resources */,
 				98B6C7CE1F6AA05100143360 /* Main.storyboard in Resources */,
+				98F741F91F6BD596006C386F /* logo.jpg in Resources */,
 				982637171F6B4711003E45E1 /* info_icon.png in Resources */,
+				98F741FD1F6BD861006C386F /* Radomir Tinkov - Gilroy-ExtraBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +288,7 @@
 		98B6C7D81F6AA05100143360 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-main";
 				DEVELOPMENT_TEAM = F8LU4P8SUH;
 				INFOPLIST_FILE = "Tinkoff converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -281,7 +301,7 @@
 		98B6C7D91F6AA05100143360 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-main";
 				DEVELOPMENT_TEAM = F8LU4P8SUH;
 				INFOPLIST_FILE = "Tinkoff converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
