@@ -22,9 +22,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBAction func RetryButton(_ sender: UIButton) {
         pre_request()
-        self.CurrencyList_from.selectRow(0, inComponent: 0, animated: true)
-        self.CurrencyList_after.selectRow(0, inComponent: 0, animated: true)
-        self.CurrencyLabel.text = ""
     }
     var currencies = [String]()
     
@@ -48,10 +45,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == CurrencyList_from {
             self.CurrencyList_after.reloadAllComponents()
-        }
-        self.updateCurrentCurrency()
+            if self.CurrencyList_from.selectedRow(inComponent: 0) == self.CurrencyList_after.selectedRow(inComponent: 0){
+                if row == 0{
+                    self.CurrencyList_after.selectRow(row + 1, inComponent: 0, animated: true)
+                }
+                else if self.currencies.count - row == 1{
+                    self.CurrencyList_after.selectRow(row - 1, inComponent: 0, animated: true)
+                }else{
+                    self.CurrencyList_after.selectRow(row + 1, inComponent: 0, animated: true)
+                }
+            }
+            self.updateCurrentCurrency()
     }
     
     
@@ -120,6 +125,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 self.LoadInd.hidesWhenStopped = true
                 self.CurrencyList_after.reloadAllComponents()
                 self.CurrencyList_from.reloadAllComponents()
+                self.CurrencyList_from.selectRow(self.currencies.count/2, inComponent: 0, animated: true)
+                self.CurrencyList_after.selectRow(self.currencies.count/2 + 1, inComponent: 0, animated: true)
+                self.CurrencyLabel.text = "Успех"
+                
             }
             
         }
@@ -137,16 +146,16 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
     }
     
-    func baseExept() -> [String] {
-        var cur_mod = currencies
-        if cur_mod.count != 0{
-            cur_mod.remove(at: CurrencyList_from.selectedRow(inComponent: 0))
-            return cur_mod
-        }
-        else{
-            return currencies
-        }
-    }
+//    func baseExept() -> [String] {
+//        var cur_mod = currencies
+//        if cur_mod.count != 0{
+//            cur_mod.remove(at: CurrencyList_from.selectedRow(inComponent: 0))
+//            return cur_mod
+//        }
+//        else{
+//            return currencies
+//        }
+//    }
     
     func parseCur(data: Data?, toCurrency: String) -> String{
         var str = ""
@@ -193,6 +202,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func updateCurrentCurrency() {
+        self.CurrencyLabel.text = "..."
         self.LoadInd.startAnimating()
         let baseCurrencyIndex = self.CurrencyList_from.selectedRow(inComponent: 0)
         let toCurrencyIndex = self.CurrencyList_after.selectedRow(inComponent: 0)
