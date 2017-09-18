@@ -30,6 +30,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-internet-connection.png" translatesAutoresizingMaskIntoConstraints="NO" id="xax-Bp-FGY">
+                                <rect key="frame" x="15" y="104" width="349" height="304"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0Q-8D-H22">
                                 <rect key="frame" x="16" y="581" width="79" height="79"/>
                                 <constraints>
@@ -117,9 +120,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-internet-connection.png" translatesAutoresizingMaskIntoConstraints="NO" id="xax-Bp-FGY">
-                                <rect key="frame" x="15" y="104" width="349" height="304"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -163,6 +163,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ChangeRatesOutlet" destination="mkA-cZ-ohU" id="NJ4-NJ-rjE"/>
                         <outlet property="CurrencyLabel" destination="oJW-ku-VKP" id="p0E-vq-LP5"/>
                         <outlet property="CurrencyList_after" destination="DWt-cG-4pi" id="0M6-Xy-vwO"/>
                         <outlet property="CurrencyList_from" destination="0vz-2M-jW8" id="ZrP-vL-hvz"/>

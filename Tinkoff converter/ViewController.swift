@@ -31,6 +31,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var ValueTo: UITextField!
     @IBOutlet weak var NoInternetConnectionImage: UIImageView!
     
+    @IBOutlet weak var ChangeRatesOutlet: UIButton!
     @IBAction func RetryButton(_ sender: UIButton) {
         pre_request()
         if flag{
@@ -47,10 +48,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.CurrencyList_from.selectRow(rightValue, inComponent: 0, animated: true)
         self.CurrencyList_after.selectRow(leftValue, inComponent: 0, animated: true)
         var textFieldLeftData = self.NumberValue.text
-        var textFieldRightData = self.ValueTo.text
-        var clone = textFieldLeftData
-        self.NumberValue.text = textFieldRightData
-        self.ValueTo.text = clone
+        var textFieldRightData = Double(self.ValueTo.text!)
+        var clone = Double(textFieldLeftData!)
+        DispatchQueue.main.async {
+            self.NumberValue.text = String(format:"%.3f", textFieldRightData!)
+            self.ValueTo.text = String(format:"%.3f", clone!)
+        }
         updateCurrentCurrency()
     }
     var currencies = [String]()
@@ -110,7 +113,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.NumberValue.text = ""
         self.NumberValue.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
-        self.NoInternetConnectionImage.isHidden = true
         self.ValueTo.textAlignment = .center
         self.ValueTo.textColor = UIColor.lightGray
         self.ValueTo.font = UIFont(name: "Futura-Medium", size: 18)
@@ -137,12 +139,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             var number_r = Double(self.ValueTo.text!)
             if textField == NumberValue && textField.text != ""{
                 DispatchQueue.main.async {
-                    self.ValueTo.text = String(currency_val! * number_l!)
+                    self.ValueTo.text = String(format:"%.3f", currency_val! * number_l!)
                 }
             } else if textField == ValueTo && textField.text != ""
             {
                 DispatchQueue.main.async {
-                    self.NumberValue.text = String(number_r! / currency_val!)
+                    self.NumberValue.text = String(format:"%.3f", number_r! / currency_val!)
                 }
             }
         }
@@ -155,7 +157,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             var number_r_cur = Double(self.ValueTo.text!)
             if number_l_cur != nil && currency_val_cur != nil{
                 DispatchQueue.main.async(execute: {
-                self.ValueTo.text = String(currency_val_cur! * number_l_cur!)
+                self.ValueTo.text = String(format:"%.3f", currency_val_cur! * number_l_cur!)
                 })
             }
     }
@@ -192,6 +194,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                                 self.DataReadyLabel.alpha = 0
                                 self.DataReadyLabel.text = "Данные обновлены!"
                                 self.DataReadyLabel.isHidden = false
+                                self.ChangeRatesOutlet.isHidden = false
                                 UIView.animate(withDuration: 2.5) {
                                     self.DataReadyLabel.alpha = 1
                                 }
@@ -220,7 +223,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             {
                 print("Не могу обновить курсы!")
                 self.flag = false
-                self.NoInternetConnectionImage.isHidden = false
+                self.ChangeRatesOutlet.isHidden = true
+                self.NoInternetConnectionImage.alpha = 1
                 self.present(self.internetFailAlert, animated: true, completion: nil)
 
             }
